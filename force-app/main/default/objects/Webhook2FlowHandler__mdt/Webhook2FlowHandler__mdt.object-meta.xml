@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This CMDT stores the mappings of incoming Webhook events and their respective handler Flows.</description>
+    <label>Webhook2FlowHandler</label>
+    <pluralLabel>Webhook2FlowHandler</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

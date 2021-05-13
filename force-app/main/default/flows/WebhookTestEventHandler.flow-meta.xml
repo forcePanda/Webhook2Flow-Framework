@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Dummy_Assignment</name>
+        <label>Dummy Assignment</label>
+        <locationX>378</locationX>
+        <locationY>152</locationY>
+        <assignmentItems>
+            <assignToReference>webhookTestEvent.payload</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>DummyData</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>This flow is used in Apex tests for the Webhook2Flow framework setup.
+DO NOT delete this flow.</description>
+    <interviewLabel>WebhookTestEventHandle {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>WebhookTestEventHandler</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Dummy_Assignment</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>webhookTestEvent</name>
+        <apexClass>WebhookTestEventDefn</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

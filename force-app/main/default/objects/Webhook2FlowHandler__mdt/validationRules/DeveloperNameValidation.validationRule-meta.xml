@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeveloperNameValidation</fullName>
+    <active>true</active>
+    <errorConditionFormula>DeveloperName &lt;&gt;  WebhookEventName__c</errorConditionFormula>
+    <errorMessage>DeveloperName must be same the Webhook Event Name</errorMessage>
+</ValidationRule>
