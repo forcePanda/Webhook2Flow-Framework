@@ -29,14 +29,14 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 - EVENT_NAME: Name of the event. It's up to you what you want to name it.
 - USERNAME & TOKEN: Comes from the WebhookAuthToken__mdt. Helps in making sure the event is coming from a trusted source. More info to be followed with a use case.
 
-#### Now let's try to understand the usage with the help of an example.
+### Now let's try to understand the usage with the help of an example.
 
 Say, we have an external system called **ForcePanda**. ForcePanda is a blog to which allows admin users to setup webhooks and subscribe/listen to following events.
 
 - publish_post : When a new post is published.
 - comment_post : When a new comment is added.
 
-##### Events JSON Structure
+#### Events JSON Structure
 
 1. publish_post
 
