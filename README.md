@@ -60,8 +60,7 @@ Say, we have an external system called **ForcePanda**. ForcePanda is a blog to w
 
 Now, let's say we want to subscribe to `publish_post` event. Following will be steps to set up the subscription. 
 
-1. Create Apex class for Apex Defined Data Type.
-
+1. Create Apex class for Apex Defined Data Type.\
 Let's call this class `FP_NewPostEvent`. This is how the class will look like:
 
     public class FP_NewPostEvent {
@@ -90,8 +89,7 @@ Let's call this class `FP_NewPostEvent`. This is how the class will look like:
     - FlowAPIName__c : FP_NewPostEventHandler
     - FlowInputVariableName__c : NewPostEvent
     - WebhookEventName__c : FP_NewPostEvent
-
-Note: EventDefnApexClass__c and WebhookEventName__c need not be same.
+> Note: EventDefnApexClass__c and WebhookEventName__c need not be same.
 
 4. Create WebhookAuthToken__mdt record.
 WebhookAuthToken__mdt is used to map tokens(32 char long string) with their respective Users who are subscribed to webhook event endpoint.
@@ -112,7 +110,6 @@ If the running user is a guest user, make sure to give the it's profile the acce
 5. Register webhook in the external system(ForcePanda).\
 Suppose you want are using a Site with domain url: https://mydomain-developer-edition.cs73.force.com  
 Then, the url to register as webhook will be: https://mydomain-developer-edition.cs73.force.com/services/apexrest/v1/WebhookService/FP_NewPostEvent?token=YzmYqRdYocUU7euWx0pdiV0APmmPyzxc&username=ForcePanda
-
 
 ## Installation
 
