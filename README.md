@@ -28,6 +28,7 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 - Org domain URL: URL can be a site URL or the regular org's domain. 
 - EVENT_NAME: Name of the event. It's up to you what you want to name it.
 - USERNAME & TOKEN: Comes from the WebhookAuthToken__mdt. Helps in making sure the event is coming from a trusted source. More info to be followed with a use case.
+- Test
 
 #### Now let's try to understand the usage with the help of an example.
 
