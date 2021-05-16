@@ -1,28 +1,28 @@
 # Webhook2Flow Framework
 
 A simple framework to handle incoming webhook events to an public/authenticated endpoint using flows.
-
-## Pre-requisites
+<br><br>
+## Prerequisites
 - Understanding of Webhooks
 - Understanding of Apex-Defined Data Types(don't be scared, it's very easy to understand)
-
+<br><br>
 ## How to use it?
 The whole set up relies on the mappings stored in the Webhook2FlowHandler__mdt custom metadata type. So let's start with that.
-
+<br><br>
 ### Webhook2FlowHandler(CMDT)
-This CMDT stores the mappings of incoming Webhook events and their respective handler Flows.
+This CMDT stores the mappings of incoming Webhook events and their respective handler Flows along with some additional info.
 
 |Field Name |Use 	    
 |-|-|
 | EventDefnApexClass__c | Name of the Apex class containing the Webhook event's payload definition. |
 | FlowAPIName__c | API name of the flow to be invoked when the corresponding webhook event is received. |
-| FlowInputVariableName__c | Name of the flow input variable that'll store the webhook event information. NOTE: Name is case-sensitive. |
+| FlowInputVariableName__c | Name of the flow input variable that'll store the webhook event information. <br> NOTE: Name is case-sensitive. |
 | WebhookEventName__c | Name of the webhook event |
-
+<br>
 ### Webhook URL Structure
-
-**Webhook URL**: https://orgdomain.com/services/apexrest/v1/WebhookService/<EVENT_NAME>  \
-?username=`USERNAME`  \
+<br>
+**Webhook URL**: https://orgdomain.com/services/apexrest/v1/WebhookService/<EVENT_NAME>\
+?username=`USERNAME`\
 &token=`TOKEN`
 
 - Org domain URL: URL can be a site URL or the regular org's domain. 
@@ -30,16 +30,15 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 - USERNAME & TOKEN: Comes from the WebhookAuthToken__mdt. Helps in making sure the event is coming from a trusted source. More info to be followed with a use case.
 
 ### Now let's try to understand the usage with the help of an example.
-
+<br>
 Say, we have an external system called **ForcePanda**. ForcePanda is a blog to which allows admin users to setup webhooks and subscribe/listen to following events.
 
 - publish_post : When a new post is published.
 - comment_post : When a new comment is added.
-
+<br><br>    
 #### Events JSON Structure
 
 1. publish_post
-
 ```
     {
         'post_title': '',
@@ -49,7 +48,6 @@ Say, we have an external system called **ForcePanda**. ForcePanda is a blog to w
 ```
 
 2. comment_post
-
 ```
     {
         'comment_content' : '',
@@ -58,11 +56,11 @@ Say, we have an external system called **ForcePanda**. ForcePanda is a blog to w
     }
 ```
 
-Now, let's say we want to subscribe to `publish_post` event. Following will be steps to set up the subscription. 
+Now, let's say we want to subscribe to `publish_post` event. Following will be steps to set up the webhook subscription. 
 
 1. Create Apex class for Apex Defined Data Type.\
 Let's call this class `FP_NewPostEvent`. This is how the class will look like:
-
+```
     public class FP_NewPostEvent {
 
         @AuraEnabled
@@ -74,7 +72,7 @@ Let's call this class `FP_NewPostEvent`. This is how the class will look like:
         @AuraEnabled
         public String post_date;
     }
-
+```
 2. Create an AutoLaunched Flow, let's call it `FP_NewPostEventHandler`. In the flow,
     - Create a variable, say `NewPostEvent`, of Apex Defined Type and select `FP_NewPostEvent` class.
     Make sure to mark the variable as 'Available for Input'.
@@ -109,7 +107,7 @@ If the running user is a guest user, make sure to give the it's profile the acce
 5. Register webhook in the external system(ForcePanda).\
 Suppose you want are using a Site with domain url: https://mydomain-developer-edition.cs73.force.com  
 Then, the url to register as webhook will be: https://mydomain-developer-edition.cs73.force.com/services/apexrest/v1/WebhookService/FP_NewPostEvent?token=YzmYqRdYocUU7euWx0pdiV0APmmPyzxc&username=ForcePanda
-
+<br><br>
 ## Installation
 
 Package: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6F000001ZM2y
