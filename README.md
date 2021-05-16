@@ -91,7 +91,7 @@ Let's call this class `FP_NewPostEvent`. This is how the class will look like:
     - WebhookEventName__c : FP_NewPostEvent
 > Note: EventDefnApexClass__c and WebhookEventName__c need not be same.
 
-4. Create WebhookAuthToken__mdt record.
+4. Create WebhookAuthToken__mdt record.\
 WebhookAuthToken__mdt is used to map tokens(32 char long string) with their respective Users who are subscribed to webhook event endpoint.
 This is used to add a check if the incoming is trusted source or not.
     - MasterLabel : ForcePanda.
@@ -99,10 +99,9 @@ This is used to add a check if the incoming is trusted source or not.
     - Description__c : This token is used for subscribing to ForcePanda events.
     - Username__c : ForcePanda
     - Token__c : YzmYqRdYocUU7euWx0pdiV0APmmPyzxc
+> NOTE: Token__c is a randomly generated 32 chars long string which is used to authorize requests. Anyone with this token would be able to make requests and invoke the flow. So, keep it safe and do not share it casually. 
 
-NOTE: Token__c is a randomly generated 32 chars long string which is used to authorize requests. Anyone with this token would be able to make requests and invoke the flow. So, keep it safe and do not share it casually. 
-
-5. Set user/profile permissions.
+5. Set user/profile permissions.\
 If the running user is a guest user, make sure to give the it's profile the access to run flows and related Apex class(s): 
     - WebhookService, WebhookServiceHandler(Part of framework)
     - FP_NewPostEvent (Class for Event Definition)
