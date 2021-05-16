@@ -19,6 +19,7 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 | FlowInputVariableName__c | Name of the flow input variable that'll store the webhook event information. <br/> NOTE: Name is case-sensitive. |
 | WebhookEventName__c | Name of the webhook event |
 <br/>
+
 ### Webhook URL Structure
 
 **Webhook URL**: https://orgdomain.com/services/apexrest/v1/WebhookService/<EVENT_NAME>\
