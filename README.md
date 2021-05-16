@@ -26,12 +26,12 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 ?username=`USERNAME`\
 &token=`TOKEN`
 
-- Org domain URL: URL can be a site URL or the regular org's domain. 
+- Org domain URL: URL can be a site URL or the regular org's domain. Regular org domain would require external system to authenticate with Salesforce first.
 - EVENT_NAME: Name of the event. It's up to you what you want to name it.
 - USERNAME & TOKEN: Comes from the WebhookAuthToken__mdt. Helps in making sure the event is coming from a trusted source. More info to be followed with a use case.
 
 ### Now let's try to understand the usage with the help of an example.
-<br/>
+
 Say, we have an external system called **ForcePanda**. ForcePanda is a blog to which allows admin users to setup webhooks and subscribe/listen to following events.
 
 - publish_post : When a new post is published.
@@ -56,7 +56,7 @@ Say, we have an external system called **ForcePanda**. ForcePanda is a blog to w
         'comment_author_email' : ''
     }
 ```
-
+<br/>
 Now, let's say we want to subscribe to `publish_post` event. Following will be steps to set up the webhook subscription. 
 
 1. Create Apex class for Apex Defined Data Type.\
@@ -106,8 +106,11 @@ If the running user is a guest user, make sure to give the it's profile the acce
     - FP_NewPostEvent (Class for Event Definition)
 
 5. Register webhook in the external system(ForcePanda).\
-Suppose you want are using a Site with domain url: https://mydomain-developer-edition.cs73.force.com  
-Then, the url to register as webhook will be: https://mydomain-developer-edition.cs73.force.com/services/apexrest/v1/WebhookService/FP_NewPostEvent?token=YzmYqRdYocUU7euWx0pdiV0APmmPyzxc&username=ForcePanda
+Suppose you want are using a Site with domain url:\
+`https://mydomain-developer-edition.cs73.force.com`
+<br/><br/>
+Then, the url to register as webhook will be:\
+`https://mydomain-developer-edition.cs73.force.com/services/apexrest/v1/WebhookService/FP_NewPostEvent?token=YzmYqRdYocUU7euWx0pdiV0APmmPyzxc&username=ForcePanda`
 <br/><br/>
 ## Installation
 
