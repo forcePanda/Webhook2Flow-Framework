@@ -20,7 +20,7 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 | WebhookEventName__c | Name of the webhook event |
 <br>
 ### Webhook URL Structure
-<br>
+
 **Webhook URL**: https://orgdomain.com/services/apexrest/v1/WebhookService/<EVENT_NAME>\
 ?username=`USERNAME`\
 &token=`TOKEN`
