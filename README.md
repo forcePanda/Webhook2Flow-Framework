@@ -74,6 +74,8 @@ Let's call this class `FP_NewPostEvent`. This is how the class will look like:
         public String post_date;
     }
 ```
+> NOTE: To handle nested JSON, you can create multiple Apex classes for child objects and annotate their declaration with @AuraEnabled in the parent class.
+
 2. Create an AutoLaunched Flow, let's call it `FP_NewPostEventHandler`. In the flow,
     - Create a variable, say `NewPostEvent`, of Apex Defined Type and select `FP_NewPostEvent` class.
     Make sure to mark the variable as 'Available for Input'.
