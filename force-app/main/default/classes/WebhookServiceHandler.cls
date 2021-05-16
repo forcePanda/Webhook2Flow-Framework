@@ -60,7 +60,7 @@ public inherited sharing class WebhookServiceHandler {
         flowHandler.start();
 
         /**
-         * Can be further extended to send some data back as response by
+         * Can be further extended to pass send some data back as response by
          * getting value from flow O/P variables.
          */
 

@@ -114,4 +114,4 @@ Then, the url to register as webhook will be:\
 <br/><br/>
 ## Installation
 
-Package: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6F000001ZM2y
+Package(Unmanaged): https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6F000001ZM2y
