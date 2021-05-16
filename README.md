@@ -7,7 +7,7 @@ A simple framework to handle incoming webhook events to an public/authenticated 
 - Understanding of Apex-Defined Data Types(don't be scared, it's very easy to understand)
 
 ## How to use it?
-The whole set up relies on the mappings stored in the Webhook2FlowHandler__mdt custom metadata type. So let's take a look at that.
+The whole set up relies on the mappings stored in the Webhook2FlowHandler__mdt custom metadata type. So let's start with that.
 
 ### Webhook2FlowHandler(CMDT)
 This CMDT stores the mappings of incoming Webhook events and their respective handler Flows.
@@ -21,8 +21,7 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 
 ### Webhook URL Structure
 
-**Webhook URL**: https://orgdomain.com/services/apexrest/v1/WebhookService/<EVENT_NAME>
-?username=<USERNAME>
+**Webhook URL**: https://orgdomain.com/services/apexrest/v1/WebhookService/<EVENT_NAME>?username=<USERNAME>
 &token=<TOKEN>
 
 - Org domain URL: URL can be a site URL or the regular org's domain. 
