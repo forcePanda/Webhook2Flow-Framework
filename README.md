@@ -40,19 +40,23 @@ Say, we have an external system called **ForcePanda**. ForcePanda is a blog to w
 
 1. publish_post
 
+```
     {
-        'post_title' : '',
-        'post_url' : '',
-        'post_date' : ''
+        'post_title': '',
+        'post_url': '',
+        'post_date': ''
     }
+```
 
 2. comment_post
 
+```
     {
         'comment_content' : '',
         'comment_date' : '',
         'comment_author_email' : ''
     }
+```
 
 Now, let's say we want to subscribe to `publish_post` event. Following will be steps to set up the subscription. 
 
