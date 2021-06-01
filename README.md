@@ -35,6 +35,9 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 Say, we have an external system called **ForcePanda**. ForcePanda is a blog to which allows admin users to setup webhooks, or in other words set up subscribers for specific webhooks events in the system.\
 Subscribers, are the systems, that will receive the information sent via the webhook event.
 
+<br/>
+
+Following are the two events that are available for webhook subscription.\
 - publish_post : When a new post is published.
 - comment_post : When a new comment is added.
 <br/><br/>    
