@@ -37,7 +37,7 @@ Subscribers, are the systems, that will receive the information sent via the web
 
 <br/>
 
-Following are the two events that are available for webhook subscription.\
+Following are the two events that are available for webhook subscription.
 - publish_post : When a new post is published.
 - comment_post : When a new comment is added.
 <br/><br/>    
