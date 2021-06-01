@@ -32,7 +32,8 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 
 ### Now let's try to understand the usage with the help of an example.
 
-Say, we have an external system called **ForcePanda**. ForcePanda is a blog to which allows admin users to setup webhooks and subscribe/listen to following events.
+Say, we have an external system called **ForcePanda**. ForcePanda is a blog to which allows admin users to setup webhooks, or in other words set up subscribers for specific webhooks events in the system.\
+Subscribers, are the systems, that will receive the information sent via the webhook event.
 
 - publish_post : When a new post is published.
 - comment_post : When a new comment is added.
@@ -57,7 +58,9 @@ Say, we have an external system called **ForcePanda**. ForcePanda is a blog to w
     }
 ```
 <br/>
-Now, let's say we want to subscribe to `publish_post` event. Following will be steps to set up the webhook subscription. 
+Now, let's say we want to set up a webhook subscription for `publish_post` event in ForcePanda and run an automation in our Salesforce org every time the specified event occurs. Following will be steps to set up the webhook subscription.\
+
+So let's start by setting up the Salesforce side of things.
 
 1. Create Apex class for Apex Defined Data Type.\
 Let's call this class `FP_NewPostEvent`. This is how the class will look like:
