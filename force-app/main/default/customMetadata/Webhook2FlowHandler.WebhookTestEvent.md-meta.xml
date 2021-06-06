@@ -23,4 +23,8 @@ DO NOT delete this record.</value>
         <field>WebhookEventName__c</field>
         <value xsi:type="xsd:string">WebhookTestEvent</value>
     </values>
+    <values>
+        <field>PayloadLocation__c</field>
+        <value xsi:type="xsd:string">RequestBody</value>
+    </values>
 </CustomMetadata>
