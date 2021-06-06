@@ -43,23 +43,16 @@ Following are the two events that are available for webhook subscription.
 - comment_post : When a new comment is added.
 <br/><br/>    
 #### Events JSON Structure
+Based on the external system, the fields in the payload can be sent as query parameters or request body. For our case, let's assume that the all the event payload attributes are sent information as query parameters. 
 
-1. publish_post
+1. `publish_post` fields:
 ```
-    {
-        'post_title': '',
-        'post_url': '',
-        'post_date': ''
-    }
+post_title, post_url and post_date
 ```
 
-2. comment_post
+2. `comment_post` fields:
 ```
-    {
-        'comment_content' : '',
-        'comment_date' : '',
-        'comment_author_email' : ''
-    }
+comment_content, comment_date, comment_author_email
 ```
 <br/>
 Now, let's say we want to set up a webhook subscription for `publish_post` event in ForcePanda and run an automation in our Salesforce org every time the specified event occurs. Following will be steps to set up the webhook subscription.
@@ -90,13 +83,14 @@ Let's call this class `FP_NewPostEvent`. This is how the class will look like:
     - Activate the flow.
 
 3. Create Webhook2FlowHandler__mdt type record.
-    - MasterLabel : ForcePanda: New Post Event.
-    - DeveloperName : FP_NewPostEvent
-    - Description__c : Event when a new post is published on the ForcePanda. 
-    - EventDefnApexClass__c : FP_NewPostEvent
-    - FlowAPIName__c : FP_NewPostEventHandler
-    - FlowInputVariableName__c : NewPostEvent
-    - WebhookEventName__c : FP_NewPostEvent
+    - MasterLabel               : ForcePanda: New Post Event.
+    - DeveloperName             : FP_NewPostEvent
+    - Description__c            : Event when a new post is published on the ForcePanda. 
+    - EventDefnApexClass__c     : FP_NewPostEvent
+    - FlowAPIName__c            : FP_NewPostEventHandler
+    - FlowInputVariableName__c  : NewPostEvent
+    - WebhookEventName__c       : FP_NewPostEvent
+    - PayloadLocation__c        : QueryParams (Because the payload info is sent as query parameters.)
 > Note: EventDefnApexClass__c and WebhookEventName__c need not be same.
 
 4. Create WebhookAuthToken__mdt record.\
