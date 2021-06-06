@@ -1,6 +1,6 @@
 # Webhook2Flow Framework
 
-A simple framework to handle incoming webhook events to an public/authenticated endpoint using flows.
+A simple framework to handle incoming webhook events to an public/authenticated endpoint hosted on Salesforce using flows.
 <br/><br/>
 ## Prerequisites
 - Understanding of Webhooks
