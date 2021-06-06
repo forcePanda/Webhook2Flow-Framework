@@ -61,7 +61,7 @@ Following are the two events that are available for webhook subscription.
     }
 ```
 <br/>
-Now, let's say we want to set up a webhook subscription for `publish_post` event in ForcePanda and run an automation in our Salesforce org every time the specified event occurs. Following will be steps to set up the webhook subscription.\
+Now, let's say we want to set up a webhook subscription for `publish_post` event in ForcePanda and run an automation in our Salesforce org every time the specified event occurs. Following will be steps to set up the webhook subscription.
 
 So let's start by setting up the Salesforce side of things.
 
