@@ -94,12 +94,27 @@ public inherited sharing class WebhookServiceHandler {
     private Map<String,Object> getFlowInputs() {
 
         Map<String,Object> flowInputs = new Map<String,Object>();
-
+        System.debug(JSON.serialize(this.request));
+        System.debug(this.request.requestBody);
         flowInputs.put(
             event2FlowConfig.FlowInputVariableName__c,
-            JSON.deserialize(this.request.requestBody.toString(), Type.forName(event2FlowConfig.EventDefnApexClass__c))
+            JSON.deserialize(this.getEventPayload(), Type.forName(event2FlowConfig.EventDefnApexClass__c))
         );
         return flowInputs;
+    }
+
+    /**
+     * Method to return the JSON string containing the webhook event information from the incoming request.
+     */
+    private String getEventPayload() {
+        switch on this.event2FlowConfig.PayloadLocation__c {
+            when 'QueryParams' {
+                return JSON.serialize(this.request.params);
+            }
+            when else {
+                return this.request.requestBody.toString();
+            }
+        }
     }
 
     /**
