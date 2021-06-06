@@ -18,6 +18,7 @@ This CMDT stores the mappings of incoming Webhook events and their respective ha
 | FlowAPIName__c | API name of the flow to be invoked when the corresponding webhook event is received. |
 | FlowInputVariableName__c | Name of the flow input variable that'll store the webhook event information. <br/> NOTE: Name is case-sensitive. |
 | WebhookEventName__c | Name of the webhook event |
+| PayloadLocation__c | Picklist field to indicate which part of the request contains the webhook event information. <br/> Values: RequestBody, QueryParams|
 <br/>
 
 ### Webhook URL Structure
