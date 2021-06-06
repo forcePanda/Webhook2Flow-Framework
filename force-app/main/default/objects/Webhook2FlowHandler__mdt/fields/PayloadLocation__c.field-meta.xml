@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PayloadLocation__c</fullName>
+    <description>Used to indicate which part of the request contains the webhook event information.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>PayloadLocation</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RequestBody</fullName>
+                <default>true</default>
+                <label>RequestBody</label>
+            </value>
+            <value>
+                <fullName>QueryParams</fullName>
+                <default>false</default>
+                <label>QueryParams</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
