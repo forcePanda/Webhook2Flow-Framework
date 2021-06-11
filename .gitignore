@@ -38,4 +38,5 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 # SFDX Project related files
-scripts/*
+scripts/apex/*
+scripts/apex/*
