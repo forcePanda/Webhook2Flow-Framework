@@ -94,8 +94,6 @@ public inherited sharing class WebhookServiceHandler {
     private Map<String,Object> getFlowInputs() {
 
         Map<String,Object> flowInputs = new Map<String,Object>();
-        System.debug(JSON.serialize(this.request));
-        System.debug(this.request.requestBody);
         flowInputs.put(
             event2FlowConfig.FlowInputVariableName__c,
             JSON.deserialize(this.getEventPayload(), Type.forName(event2FlowConfig.EventDefnApexClass__c))
